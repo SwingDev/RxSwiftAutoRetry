@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FA3AFCD21AECE2A009DAFAA /* RxSwiftAutoRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */; };
+		0FA3AFD221AECE40009DAFAA /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFCF21AECE40009DAFAA /* MockError.swift */; };
+		0FA3AFD321AECE40009DAFAA /* DispatchQueue+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD021AECE40009DAFAA /* DispatchQueue+String.swift */; };
+		0FA3AFD421AECE41009DAFAA /* ObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD121AECE40009DAFAA /* ObservableFactory.swift */; };
+		0FA3AFD621AECED3009DAFAA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD521AECED3009DAFAA /* README.md */; };
+		0FA3AFD821AECEE4009DAFAA /* RxSwiftAutoRetry.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */; };
 		0FFEDC8E21AECC9500852572 /* RxSwiftAutoRetry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */; };
 		0FFEDC9321AECC9500852572 /* RxSwiftAutoRetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */; };
 		0FFEDC9521AECC9500852572 /* RxSwiftAutoRetry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetry.swift; sourceTree = "<group>"; };
+		0FA3AFCF21AECE40009DAFAA /* MockError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		0FA3AFD021AECE40009DAFAA /* DispatchQueue+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+String.swift"; sourceTree = "<group>"; };
+		0FA3AFD121AECE40009DAFAA /* ObservableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableFactory.swift; sourceTree = "<group>"; };
+		0FA3AFD521AECED3009DAFAA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RxSwiftAutoRetry.podspec; sourceTree = "<group>"; };
 		0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftAutoRetry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxSwiftAutoRetry.h; sourceTree = "<group>"; };
 		0FFEDC8821AECC9500852572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,9 +72,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FA3AFCE21AECE40009DAFAA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3AFCF21AECE40009DAFAA /* MockError.swift */,
+				0FA3AFD021AECE40009DAFAA /* DispatchQueue+String.swift */,
+				0FA3AFD121AECE40009DAFAA /* ObservableFactory.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0FFEDC7A21AECC9500852572 = {
 			isa = PBXGroup;
 			children = (
+				0FA3AFD521AECED3009DAFAA /* README.md */,
+				0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */,
 				0FFEDC8621AECC9500852572 /* Source */,
 				0FFEDC9121AECC9500852572 /* Tests */,
 				0FFEDC8521AECC9500852572 /* Products */,
@@ -83,6 +107,7 @@
 		0FFEDC8621AECC9500852572 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */,
 				0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */,
 				0FFEDC8821AECC9500852572 /* Info.plist */,
 			);
@@ -92,6 +117,7 @@
 		0FFEDC9121AECC9500852572 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0FA3AFCE21AECE40009DAFAA /* Resources */,
 				0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */,
 				0FFEDC9421AECC9500852572 /* Info.plist */,
 			);
@@ -183,6 +209,7 @@
 				TargetAttributes = {
 					0FFEDC8321AECC9500852572 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					0FFEDC8C21AECC9500852572 = {
 						CreatedOnToolsVersion = 10.1;
@@ -212,6 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3AFD821AECEE4009DAFAA /* RxSwiftAutoRetry.podspec in Resources */,
+				0FA3AFD621AECED3009DAFAA /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3AFCD21AECE2A009DAFAA /* RxSwiftAutoRetry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3AFD221AECE40009DAFAA /* MockError.swift in Sources */,
 				0FFEDC9321AECC9500852572 /* RxSwiftAutoRetryTests.swift in Sources */,
+				0FA3AFD321AECE40009DAFAA /* DispatchQueue+String.swift in Sources */,
+				0FA3AFD421AECE41009DAFAA /* ObservableFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E2F6326B7EF1FB14F40575B /* Pods-RxSwiftAutoRetry.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -467,6 +501,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.swingdev.RxSwiftAutoRetry;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -476,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75A4264EED976E7A83561A9E /* Pods-RxSwiftAutoRetry.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -502,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 140266015EBE4581D117E495 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -521,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78677F7555AD7CE7BDD48E65 /* Pods-RxSwiftAutoRetryTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				INFOPLIST_FILE = Tests/Info.plist;
