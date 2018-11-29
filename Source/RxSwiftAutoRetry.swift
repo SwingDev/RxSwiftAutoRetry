@@ -70,9 +70,11 @@ extension ObservableType {
                                 with jitter: ClosedRange<Double>,
                                 scheduler: SchedulerType,
                                 onRetry: ((Error) -> Void)?) {
-        let delay = exp(Double(trial) * Double.random(in: jitter))
+        
+        let delayTime = exp(Double(trial)) * Double.random(in: jitter)
+        
         disposable.disposable = self
-            .delaySubscription(delay, scheduler: scheduler)
+            .delaySubscription(delayTime, scheduler: scheduler)
             .subscribe({ event in
             switch event {
             case .next(let element): observer.onNext(element)
