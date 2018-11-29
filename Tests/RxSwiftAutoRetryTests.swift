@@ -115,15 +115,20 @@ class RxSwiftAutoRetryTests: XCTestCase {
     func testObjectReleaseInRetryActionClosure() {
         weak var weakTestObject: Observable<Int>?
         
-        let closure = {
-            let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
+        let _ = {
+            autoreleasepool(invoking: {
+                let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
+                
+                let obs = ObservableFactory.instance.createObservable()
+                weakTestObject = obs
+                obs
+                    .retryExponentially(1, scheduler: scheduler)
+                    .subscribe(onNext: {_ in print("Next") }, onError: {_ in print("Error") },
+                        onCompleted: { print("Completed") }, onDisposed: {print("Disposed")}
+                    )
+                    .disposed(by: disposeBag)
+            })
             
-            var obs = ObservableFactory.instance.createObservable()
-            weakTestObject = obs
-            obs
-                .retryExponentially(1, scheduler: scheduler)
-                .subscribe()
-                .disposed(by: disposeBag)
         }()
         expect(weakTestObject).toEventually(beNil(),timeout: 5)
     }
