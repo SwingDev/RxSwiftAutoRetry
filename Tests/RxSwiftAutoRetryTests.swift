@@ -18,7 +18,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(0, with: 0.9...1.1, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(0, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(0), timeout: 3)
@@ -28,7 +28,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(1, with: 0.9...1.1, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(1, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(1), timeout: 4)
@@ -38,7 +38,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(2, with: 0.9...1.1, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(2, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(2), timeout: 15)
@@ -48,7 +48,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(3, with: 0.9...1.1, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(3, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(3), timeout: 40)
@@ -60,7 +60,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let expectedErrorMessage = "Testing exponential retry error flow"
         
         ObservableFactory.instance.createObservable(errorMessage: expectedErrorMessage)
-            .retryExponentially(2, with: 0.9...1.1, scheduler: scheduler)
+            .retryExponentially(2, with: 9e-4...11e-4, scheduler: scheduler)
             .subscribe(onError: { (error) in
                 actualError = error as? MockError
             })
@@ -79,7 +79,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         var actualRetryQueueLabelName = "Unknown"
         
         ObservableFactory.instance.createObservable()
-            .retryExponentially(1, with: 0.9...1.1, scheduler: scheduler) {_ in
+            .retryExponentially(1, with: 9e-4...11e-4, scheduler: scheduler) {_ in
                 guard let queueLabelName = DispatchQueue.CurrentQueueLabelName else { return }
                 actualRetryQueueLabelName = queueLabelName
             }
@@ -92,17 +92,16 @@ class RxSwiftAutoRetryTests: XCTestCase {
     func testFollowingRetryIntervalTimes() {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         let marginOfError = 0.2
-        let expectedIntervalTimeRanges = (1...3).map { exp(Double($0)) }
+        let expectedIntervalTimeRanges = (0...2).map { exp(Double($0)) * 10e-4 }
         var actualIntervalTimes = [Double]()
-        var startTime: Date?
+        var startTime = Date()
         
         ObservableFactory.instance.createObservable()
-            .retryExponentially(3, with: 1.0...1.0, scheduler: scheduler) {_ in
-                guard let startTime = startTime else { return }
+            .retryExponentially(3, with: 9e-4...11e-4, scheduler: scheduler) {_ in
                 actualIntervalTimes += [Date().timeIntervalSince(startTime)]
+                startTime = Date()
             }
             .subscribe(onNext: {_ in
-                startTime = Date()
             })
             .disposed(by: disposeBag)
         
@@ -122,10 +121,8 @@ class RxSwiftAutoRetryTests: XCTestCase {
                 let obs = ObservableFactory.instance.createObservable()
                 weakTestObject = obs
                 obs
-                    .retryExponentially(1, scheduler: scheduler)
-                    .subscribe(onNext: {_ in print("Next") }, onError: {_ in print("Error") },
-                        onCompleted: { print("Completed") }, onDisposed: {print("Disposed")}
-                    )
+                    .retryExponentially(1, with: 9e-4...11e-4, scheduler: scheduler)
+                    .subscribe()
                     .disposed(by: disposeBag)
             })
             
