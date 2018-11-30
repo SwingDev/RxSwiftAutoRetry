@@ -11,6 +11,8 @@ import RxSwift
 import Nimble
 @testable import RxSwiftAutoRetry
 
+private let testJitter = 9e-4...11e-4
+
 class RxSwiftAutoRetryTests: XCTestCase {
     let disposeBag = DisposeBag()
     
@@ -18,7 +20,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(0, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(0, with: testJitter, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(0), timeout: 3)
@@ -28,7 +30,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(1, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(1, with: testJitter, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(1), timeout: 4)
@@ -38,7 +40,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(2, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(2, with: testJitter, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(2), timeout: 15)
@@ -48,7 +50,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
         var numberOfRetries = 0
         ObservableFactory.instance.createObservable()
-            .retryExponentially(3, with: 9e-4...11e-4, scheduler: scheduler) {_ in numberOfRetries += 1}
+            .retryExponentially(3, with: testJitter, scheduler: scheduler) {_ in numberOfRetries += 1}
             .subscribe()
             .disposed(by: disposeBag)
         expect(numberOfRetries).toEventually(equal(3), timeout: 40)
@@ -60,7 +62,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         let expectedErrorMessage = "Testing exponential retry error flow"
         
         ObservableFactory.instance.createObservable(errorMessage: expectedErrorMessage)
-            .retryExponentially(2, with: 9e-4...11e-4, scheduler: scheduler)
+            .retryExponentially(2, with: testJitter, scheduler: scheduler)
             .subscribe(onError: { (error) in
                 actualError = error as? MockError
             })
@@ -79,7 +81,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         var actualRetryQueueLabelName = "Unknown"
         
         ObservableFactory.instance.createObservable()
-            .retryExponentially(1, with: 9e-4...11e-4, scheduler: scheduler) {_ in
+            .retryExponentially(1, with: testJitter, scheduler: scheduler) {_ in
                 guard let queueLabelName = DispatchQueue.CurrentQueueLabelName else { return }
                 actualRetryQueueLabelName = queueLabelName
             }
@@ -97,7 +99,7 @@ class RxSwiftAutoRetryTests: XCTestCase {
         var startTime = Date()
         
         ObservableFactory.instance.createObservable()
-            .retryExponentially(3, with: 9e-4...11e-4, scheduler: scheduler) {_ in
+            .retryExponentially(3, with: testJitter, scheduler: scheduler) {_ in
                 actualIntervalTimes += [Date().timeIntervalSince(startTime)]
                 startTime = Date()
             }
@@ -121,12 +123,12 @@ class RxSwiftAutoRetryTests: XCTestCase {
                 let obs = ObservableFactory.instance.createObservable()
                 weakTestObject = obs
                 obs
-                    .retryExponentially(1, with: 9e-4...11e-4, scheduler: scheduler)
+                    .retryExponentially(1, with: testJitter, scheduler: scheduler)
                     .subscribe()
                     .disposed(by: disposeBag)
             })
             
         }()
-        expect(weakTestObject).toEventually(beNil(),timeout: 5)
+        expect(weakTestObject).toEventually(beNil(), timeout: 5)
     }
 }
