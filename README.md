@@ -38,17 +38,27 @@ See sample project in Example/ folder.
 
 Usually using this method looks like it:
 ```Swift
-    observable.retryExponentially(2, with: 0.9...1.1, scheduler: scheduler) { error in
-        //Add code
-    }
+observable.retryExponentially(2, with: 0.9...1.1, scheduler: scheduler) { error in
+//Add code
+}
 ```
 
 This method provides set of defaults values for parameters so there is no objection in writing:
 ```Swift
-    observable.retryExponentially()
+observable.retryExponentially()
 ```
 
-#### From Swift Package Manager
+##### Parameters
+* **maxAttemptCount** - Maximum number of times to repeat the sequence.
+* **jitter** - Range allowing to randomize delay time
+* **scheduler** - Scheduler on which the delay will be conducted
+* **onRetry** - Action which will be invoked after delay on every retry. This is optional parameter.
+
+##### Default values
+* **maxAttemptCount**:  `3`
+* **jitter**: `0.9...1.1`
+* **scheduler**: `ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())`
+* **onRetry**: `nil`
 ## License
 
 RxSwiftAutoRetry is available under the MIT license. See the LICENSE file for more info.
