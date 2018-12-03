@@ -50,7 +50,7 @@ observable.retryExponentially()
 
 ##### Parameters
 * **maxAttemptCount** - Maximum number of times to repeat the sequence.
-* **jitter** - Range allowing to randomize delay time
+* **jitter** - Multiplier which randomize delay time. Randomizing value is chosen from given range.
 * **scheduler** - Scheduler on which the delay will be conducted
 * **onRetry** - Action which will be invoked after delay on every retry. This is optional parameter.
 

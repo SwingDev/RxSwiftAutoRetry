@@ -37,6 +37,7 @@
 		0FA3AFD121AECE40009DAFAA /* ObservableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableFactory.swift; sourceTree = "<group>"; };
 		0FA3AFD521AECED3009DAFAA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RxSwiftAutoRetry.podspec; sourceTree = "<group>"; };
+		0FFBB86B21B5349600787FB5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftAutoRetry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxSwiftAutoRetry.h; sourceTree = "<group>"; };
 		0FFEDC8821AECC9500852572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		0FFEDC7A21AECC9500852572 = {
 			isa = PBXGroup;
 			children = (
+				0FFBB86B21B5349600787FB5 /* LICENSE */,
 				0FA3AFD521AECED3009DAFAA /* README.md */,
 				0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */,
 				0FFEDC8621AECC9500852572 /* Source */,

@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/SwingDev/RxSwiftAutoRetry'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'SwingDev' => 'opensource@swingdev.io' }
+  s.author           = { 'Krystian Bujak' => 'krystian.bujak@swingdev.io' }
   s.source           = { :git => 'https://github.com/SwingDev/RxSwiftAutoRetry.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
