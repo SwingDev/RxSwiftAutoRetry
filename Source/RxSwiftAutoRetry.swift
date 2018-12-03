@@ -25,7 +25,7 @@ extension ObservableType {
             return disposable
         })
     }
-    
+
     private func handleObserver(observer: AnyObserver<E>,
                                 trial: Int,
                                 maxAttemptCount: Int,
@@ -33,9 +33,9 @@ extension ObservableType {
                                 with jitter: ClosedRange<Double>,
                                 scheduler: SchedulerType,
                                 onRetry: ((Error) -> Void)?) {
-        
+
         let delayTime = exp(Double(trial)) * Double.random(in: jitter)
-        
+
         disposable.disposable = self
             .delaySubscription(delayTime, scheduler: scheduler)
             .subscribe({ event in
@@ -57,6 +57,6 @@ extension ObservableType {
                                         onRetry: onRetry)
                 }
             })
-        
+
     }
 }

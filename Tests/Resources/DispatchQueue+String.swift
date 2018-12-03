@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension DispatchQueue{
-    static var CurrentQueueLabelName: String?{
+extension DispatchQueue {
+    static var CurrentQueueLabelName: String? {
         return String(validatingUTF8: __dispatch_queue_get_label(nil))
     }
 }
