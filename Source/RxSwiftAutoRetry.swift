@@ -13,6 +13,8 @@ extension ObservableType {
                                    randomizedRange jitter: ClosedRange<Double> = 0.9...1.1,
                                    scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global()),
                                    onRetry: ((Error) -> Void)? = nil) -> Observable<E> {
+        guard maxAttemptCount > 0 else { return Observable.empty() }
+        
         return Observable.create({
             let disposable = SerialDisposable()
             self.handleObserver(observer: $0,
@@ -43,11 +45,11 @@ extension ObservableType {
                 case .next(let element): observer.onNext(element)
                 case .completed: observer.onCompleted()
                 case .error(let error):
-                    guard trial < maxAttemptCount else {
+                    onRetry?(error)
+                    guard trial < (maxAttemptCount - 1) else {
                         observer.onError(error)
                         return
                     }
-                    onRetry?(error)
                     self.handleObserver(observer: observer,
                                         trial: trial + 1,
                                         maxAttemptCount: maxAttemptCount,

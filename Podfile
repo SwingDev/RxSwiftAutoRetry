@@ -1,4 +1,7 @@
 use_frameworks!
+target 'ExampleApp' do 
+  pod 'RxSwiftAutoRetry', :path => '.'
+end
 target 'RxSwiftAutoRetry' do
   
   pod 'RxSwift', '~> 4.4.0'
