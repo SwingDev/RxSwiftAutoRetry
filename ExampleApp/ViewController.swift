@@ -10,14 +10,11 @@ import UIKit
 import RxSwift
 import RxSwiftAutoRetry
 
-enum SampleError: Error {
-    case sampleErrorCase
-}
 class ViewController: UIViewController {
 
-    let containerView = GradientView()
+    let containerView = UIView()
     let tableView = UITableView()
-    let horizontalStackView = UIStackView()
+    let horizontalSubContainerView = UIView()
     let retryNumberLabel = UILabel()
     let retryNumberTxtField = UITextField()
     let errorLabel = UILabel()
@@ -31,35 +28,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(containerView)
         containerView.frame = view.frame
+        containerView.backgroundColor = .white
 
         [tableView,
-         horizontalStackView,
-         retryNumberLabel,
-         retryNumberTxtField,
+         horizontalSubContainerView,
          startButton,
          errorLabel,
          activityIndicator].forEach { containerView.addSubview($0) }
-        [retryNumberLabel, retryNumberTxtField].forEach { horizontalStackView.addArrangedSubview($0) }
+        [retryNumberLabel, retryNumberTxtField].forEach { horizontalSubContainerView.addSubview($0) }
 
         tableView.delegate = self
         tableView.dataSource = self
 
         setupTableView()
-        setupHorizontalStackView()
-        setupLabel()
-        setupTxtField()
+        setupHorizontalSubContainerView()
+        setupRetryNumberLabel()
+        setupRetryNumberTxtField()
         setupStartButton()
         setupErrorLabel()
         setupActivityIndicator()
 
         startButton.addTarget(self, action: #selector(startAction), for: .touchUpInside)
-
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
 
     @objc private func startAction() {
-        guard let numberString = retryNumberTxtField.text,
-            let number = Int(numberString) else { return }
+        guard let numberString = retryNumberTxtField.text, let number = Int(numberString) else { return }
 
         timeArray.removeAll()
         startTime = Date()
@@ -120,14 +114,14 @@ extension ViewController {
                                toItem: containerView,
                                attribute: .leading,
                                multiplier: 1.0,
-                               constant: 20),
+                               constant: 0),
             NSLayoutConstraint(item: tableView,
                                attribute: .trailing,
                                relatedBy: .equal,
                                toItem: containerView,
                                attribute: .trailing,
                                multiplier: 1.0,
-                               constant: -20),
+                               constant: 0),
             NSLayoutConstraint(item: tableView,
                                attribute: .height,
                                relatedBy: .equal,
@@ -137,37 +131,34 @@ extension ViewController {
                                constant: 250)
             ])
         tableView.backgroundColor = .white
-        tableView.layer.cornerRadius = 5
-        tableView.layer.borderWidth = 3
-        tableView.indicatorStyle = .white
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Custom")
     }
 
-    private func setupHorizontalStackView() {
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupHorizontalSubContainerView() {
+        horizontalSubContainerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addConstraints([
-            NSLayoutConstraint(item: horizontalStackView,
+            NSLayoutConstraint(item: horizontalSubContainerView,
                                attribute: .top,
                                relatedBy: .equal,
                                toItem: tableView,
                                attribute: .bottom,
                                multiplier: 1.0,
-                               constant: 30),
-            NSLayoutConstraint(item: horizontalStackView,
+                               constant: UIScreen.main.bounds.height < 667 ? 50 : 100),
+            NSLayoutConstraint(item: horizontalSubContainerView,
                                attribute: .leading,
                                relatedBy: .equal,
                                toItem: containerView,
                                attribute: .leading,
                                multiplier: 1.0,
                                constant: 20),
-            NSLayoutConstraint(item: horizontalStackView,
+            NSLayoutConstraint(item: horizontalSubContainerView,
                                attribute: .trailing,
                                relatedBy: .equal,
                                toItem: containerView,
                                attribute: .trailing,
                                multiplier: 1.0,
                                constant: -20),
-            NSLayoutConstraint(item: horizontalStackView,
+            NSLayoutConstraint(item: horizontalSubContainerView,
                                attribute: .height,
                                relatedBy: .equal,
                                toItem: nil,
@@ -175,39 +166,84 @@ extension ViewController {
                                multiplier: 1.0,
                                constant: 50)
             ])
-        horizontalStackView.distribution = .fillProportionally
-        horizontalStackView.alignment = .center
-        horizontalStackView.axis = .horizontal
     }
 
-    private func setupLabel() {
+    private func setupRetryNumberLabel() {
+        retryNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         retryNumberLabel.text = "Number of retries:"
         retryNumberLabel.textColor = .black
-        retryNumberLabel.font = UIFont(name: "ArialMT", size: 25)
-    }
-
-    private func setupTxtField() {
-        retryNumberTxtField.textAlignment = .center
-        retryNumberTxtField.font = UIFont(name: "ArialMT", size: 25)
-        retryNumberTxtField.backgroundColor = UIColor.lightGray
-        retryNumberTxtField.layer.cornerRadius = 5
-        retryNumberTxtField.keyboardType = .numberPad
-        retryNumberTxtField.addConstraints([
-            NSLayoutConstraint(item: retryNumberTxtField,
+        retryNumberLabel.textAlignment = .left
+        retryNumberLabel.font = UIFont(name: "ArialMT", size: 30)
+        retryNumberLabel.adjustsFontSizeToFitWidth = true
+        horizontalSubContainerView.addConstraints([
+            NSLayoutConstraint(item: retryNumberLabel,
+                               attribute: .top,
+                               relatedBy: .equal,
+                               toItem: horizontalSubContainerView,
+                               attribute: .top,
+                               multiplier: 1.0,
+                               constant: 0),
+            NSLayoutConstraint(item: retryNumberLabel,
+                               attribute: .leading,
+                               relatedBy: .equal,
+                               toItem: horizontalSubContainerView,
+                               attribute: .leading,
+                               multiplier: 1.0,
+                               constant: 0),
+            NSLayoutConstraint(item: retryNumberLabel,
+                               attribute: .bottom,
+                               relatedBy: .equal,
+                               toItem: horizontalSubContainerView,
+                               attribute: .bottom,
+                               multiplier: 1.0,
+                               constant: 0),
+            NSLayoutConstraint(item: retryNumberLabel,
                                attribute: .width,
                                relatedBy: .equal,
                                toItem: nil,
                                attribute: .notAnAttribute,
                                multiplier: 1.0,
-                               constant: 50),
+                               constant: 3 / 5 * UIScreen.main.bounds.width)
+            ])
+    }
+
+    private func setupRetryNumberTxtField() {
+        retryNumberTxtField.translatesAutoresizingMaskIntoConstraints = false
+        retryNumberTxtField.textAlignment = .center
+        retryNumberTxtField.font = UIFont(name: "ArialMT", size: 25)
+        retryNumberTxtField.backgroundColor = .white
+        retryNumberTxtField.layer.borderWidth = 0.5
+        retryNumberTxtField.keyboardType = .numberPad
+        horizontalSubContainerView.addConstraints([
             NSLayoutConstraint(item: retryNumberTxtField,
-                               attribute: .height,
+                               attribute: .top,
                                relatedBy: .equal,
-                               toItem: nil,
-                               attribute: .notAnAttribute,
+                               toItem: horizontalSubContainerView,
+                               attribute: .top,
                                multiplier: 1.0,
-                               constant: 50)
-        ])
+                               constant: 0),
+            NSLayoutConstraint(item: retryNumberTxtField,
+                               attribute: .leading,
+                               relatedBy: .equal,
+                               toItem: retryNumberLabel,
+                               attribute: .trailing,
+                               multiplier: 1.0,
+                               constant: 10),
+            NSLayoutConstraint(item: retryNumberTxtField,
+                               attribute: .bottom,
+                               relatedBy: .equal,
+                               toItem: horizontalSubContainerView,
+                               attribute: .bottom,
+                               multiplier: 1.0,
+                               constant: 0),
+            NSLayoutConstraint(item: retryNumberTxtField,
+                               attribute: .trailing,
+                               relatedBy: .equal,
+                               toItem: horizontalSubContainerView,
+                               attribute: .trailing,
+                               multiplier: 1.0,
+                               constant: 0)
+            ])
         retryNumberTxtField.attributedPlaceholder = NSAttributedString(
             string: "1",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray]
@@ -222,7 +258,7 @@ extension ViewController {
             NSLayoutConstraint(item: startButton,
                                attribute: .top,
                                relatedBy: .equal,
-                               toItem: horizontalStackView,
+                               toItem: horizontalSubContainerView,
                                attribute: .bottom,
                                multiplier: 1.0,
                                constant: 30),
@@ -258,7 +294,7 @@ extension ViewController {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.isHidden = true
         errorLabel.text = "Error occured"
-        errorLabel.textColor = .white
+        errorLabel.textColor = .black
         retryNumberTxtField.font = UIFont(name: "ArialMT", size: 20)
         containerView.addConstraints([
             NSLayoutConstraint(item: errorLabel,
@@ -287,7 +323,7 @@ extension ViewController {
     private func setupActivityIndicator() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.isHidden = true
-        activityIndicator.color = .white
+        activityIndicator.color = .black
         containerView.addConstraints([
             NSLayoutConstraint(item: activityIndicator,
                                attribute: .bottom,

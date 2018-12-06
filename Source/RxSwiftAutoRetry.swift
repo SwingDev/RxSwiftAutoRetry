@@ -14,7 +14,7 @@ extension ObservableType {
                                    scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global()),
                                    onRetry: ((Error) -> Void)? = nil) -> Observable<E> {
         guard maxAttemptCount > 0 else { return Observable.empty() }
-        
+
         return Observable.create({
             let disposable = SerialDisposable()
             self.handleObserver(observer: $0,

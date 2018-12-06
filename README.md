@@ -1,6 +1,6 @@
 # RxSwiftAutoRetry
 
-[![CI Status](https://img.shields.io/travis/kbujak/RxSwiftAutoRetry.svg?style=flat)](https://travis-ci.org/kbujak/RxSwiftAutoRetry)
+[![CI Status](https://app.bitrise.io/app/ed98584975d8f98a/status.svg?token=a_tPFWvR2HKJmI3Gv-Ew0Q)
 [![Version](https://img.shields.io/cocoapods/v/RxSwiftAutoRetry.svg?style=flat)](https://cocoapods.org/pods/RxSwiftAutoRetry)
 [![License](https://img.shields.io/cocoapods/l/RxSwiftAutoRetry.svg?style=flat)](https://cocoapods.org/pods/RxSwiftAutoRetry)
 [![Platform](https://img.shields.io/cocoapods/p/RxSwiftAutoRetry.svg?style=flat)](https://cocoapods.org/pods/RxSwiftAutoRetry)

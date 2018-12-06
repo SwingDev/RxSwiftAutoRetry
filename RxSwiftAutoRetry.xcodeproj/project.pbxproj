@@ -13,9 +13,9 @@
 		0FA3AFD421AECE41009DAFAA /* ObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD121AECE40009DAFAA /* ObservableFactory.swift */; };
 		0FA3AFD621AECED3009DAFAA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD521AECED3009DAFAA /* README.md */; };
 		0FA3AFD821AECEE4009DAFAA /* RxSwiftAutoRetry.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */; };
+		0FB7BA6421B91A32003CCCCD /* SampleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7BA6321B91A32003CCCCD /* SampleError.swift */; };
 		0FFBB87521B549B700787FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFBB87421B549B700787FB5 /* AppDelegate.swift */; };
 		0FFBB87721B549B700787FB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFBB87621B549B700787FB5 /* ViewController.swift */; };
-		0FFBB88621B55A5E00787FB5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFBB88521B55A5E00787FB5 /* GradientView.swift */; };
 		0FFEDC8E21AECC9500852572 /* RxSwiftAutoRetry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */; };
 		0FFEDC9321AECC9500852572 /* RxSwiftAutoRetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */; };
 		0FFEDC9521AECC9500852572 /* RxSwiftAutoRetry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,12 +41,12 @@
 		0FA3AFD121AECE40009DAFAA /* ObservableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableFactory.swift; sourceTree = "<group>"; };
 		0FA3AFD521AECED3009DAFAA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0FA3AFD721AECEE3009DAFAA /* RxSwiftAutoRetry.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RxSwiftAutoRetry.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0FB7BA6321B91A32003CCCCD /* SampleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleError.swift; sourceTree = "<group>"; };
 		0FFBB86B21B5349600787FB5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0FFBB87221B549B700787FB5 /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFBB87421B549B700787FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FFBB87621B549B700787FB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FFBB88021B549B900787FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0FFBB88521B55A5E00787FB5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftAutoRetry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxSwiftAutoRetry.h; sourceTree = "<group>"; };
 		0FFEDC8821AECC9500852572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,23 +103,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0FB7BA6221B91A18003CCCCD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				0FB7BA6321B91A32003CCCCD /* SampleError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		0FFBB87321B549B700787FB5 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				0FFBB88421B55A3900787FB5 /* View */,
+				0FB7BA6221B91A18003CCCCD /* Errors */,
 				0FFBB87421B549B700787FB5 /* AppDelegate.swift */,
 				0FFBB87621B549B700787FB5 /* ViewController.swift */,
 				0FFBB88021B549B900787FB5 /* Info.plist */,
 			);
 			path = ExampleApp;
-			sourceTree = "<group>";
-		};
-		0FFBB88421B55A3900787FB5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0FFBB88521B55A5E00787FB5 /* GradientView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		0FFEDC7A21AECC9500852572 = {
@@ -456,9 +456,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB7BA6421B91A32003CCCCD /* SampleError.swift in Sources */,
 				0FFBB87721B549B700787FB5 /* ViewController.swift in Sources */,
 				0FFBB87521B549B700787FB5 /* AppDelegate.swift in Sources */,
-				0FFBB88621B55A5E00787FB5 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
