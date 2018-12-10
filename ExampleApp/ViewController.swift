@@ -173,7 +173,6 @@ extension ViewController {
         retryNumberLabel.text = "Number of retries:"
         retryNumberLabel.textColor = .black
         retryNumberLabel.textAlignment = .left
-        retryNumberLabel.font = UIFont(name: "ArialMT", size: 30)
         retryNumberLabel.adjustsFontSizeToFitWidth = true
         horizontalSubContainerView.addConstraints([
             NSLayoutConstraint(item: retryNumberLabel,
@@ -203,14 +202,13 @@ extension ViewController {
                                toItem: nil,
                                attribute: .notAnAttribute,
                                multiplier: 1.0,
-                               constant: 3 / 5 * UIScreen.main.bounds.width)
+                               constant: 2 / 5 * UIScreen.main.bounds.width)
             ])
     }
 
     private func setupRetryNumberTxtField() {
         retryNumberTxtField.translatesAutoresizingMaskIntoConstraints = false
         retryNumberTxtField.textAlignment = .center
-        retryNumberTxtField.font = UIFont(name: "ArialMT", size: 25)
         retryNumberTxtField.backgroundColor = .white
         retryNumberTxtField.layer.borderWidth = 0.5
         retryNumberTxtField.keyboardType = .numberPad
