@@ -139,4 +139,21 @@ class RxSwiftAutoRetryTests: XCTestCase {
         }()
         expect(weakTestObject).toEventually(beNil(), timeout: 5)
     }
+
+    func testNumberOfRetriesNotExceed() {
+        let scheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
+        var numberOfRetries = 0
+        var isFinished = false
+        ObservableFactory.instance.createObservable()
+            .retryExponentially(maxAttemptCount: 1,
+                                randomizedRange: testJitter,
+                                scheduler: scheduler) {_ in numberOfRetries += 1}
+            .subscribe(onDisposed: {
+                isFinished = true
+            })
+            .disposed(by: disposeBag)
+
+        expect(isFinished).toEventually(beTrue(), timeout: 3)
+        expect(numberOfRetries).to(equal(1))
+    }
 }

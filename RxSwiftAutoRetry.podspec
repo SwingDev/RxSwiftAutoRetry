@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'RxSwiftAutoRetry/Source/*'
+  s.source_files = 'Source/*.swift'
   s.dependency 'RxSwift', '~> 4.4'
 end

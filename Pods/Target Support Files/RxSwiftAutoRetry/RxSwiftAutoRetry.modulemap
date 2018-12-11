@@ -1,0 +1,6 @@
+framework module RxSwiftAutoRetry {
+  umbrella header "RxSwiftAutoRetry-umbrella.h"
+
+  export *
+  module * { export * }
+}
