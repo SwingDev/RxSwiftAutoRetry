@@ -53,15 +53,9 @@
 		0FFEDC8D21AECC9500852572 /* RxSwiftAutoRetryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftAutoRetryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetryTests.swift; sourceTree = "<group>"; };
 		0FFEDC9421AECC9500852572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		140266015EBE4581D117E495 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetryTests/Pods-RxSwiftAutoRetryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3188BA5CA0906E04FA4C15A9 /* Pods_ExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftAutoRetry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C65EDE0EB863D96405EB947 /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		75A4264EED976E7A83561A9E /* Pods-RxSwiftAutoRetry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetry.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetry/Pods-RxSwiftAutoRetry.release.xcconfig"; sourceTree = "<group>"; };
 		77856630B0DA651BC141C0C6 /* Pods_RxSwiftAutoRetryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftAutoRetryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78677F7555AD7CE7BDD48E65 /* Pods-RxSwiftAutoRetryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetryTests/Pods-RxSwiftAutoRetryTests.release.xcconfig"; sourceTree = "<group>"; };
-		9E2F6326B7EF1FB14F40575B /* Pods-RxSwiftAutoRetry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetry/Pods-RxSwiftAutoRetry.debug.xcconfig"; sourceTree = "<group>"; };
-		D365E54DCCFF9E2A15370DD4 /* Pods-ExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +126,6 @@
 				0FFEDC8621AECC9500852572 /* Source */,
 				0FFEDC9121AECC9500852572 /* Tests */,
 				0FFEDC8521AECC9500852572 /* Products */,
-				EF60559C26E013447ADB6F5A /* Pods */,
 				F7C242B1B77796C11E85598D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -165,19 +158,6 @@
 				0FFEDC9421AECC9500852572 /* Info.plist */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		EF60559C26E013447ADB6F5A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9E2F6326B7EF1FB14F40575B /* Pods-RxSwiftAutoRetry.debug.xcconfig */,
-				75A4264EED976E7A83561A9E /* Pods-RxSwiftAutoRetry.release.xcconfig */,
-				140266015EBE4581D117E495 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */,
-				78677F7555AD7CE7BDD48E65 /* Pods-RxSwiftAutoRetryTests.release.xcconfig */,
-				D365E54DCCFF9E2A15370DD4 /* Pods-ExampleApp.debug.xcconfig */,
-				6C65EDE0EB863D96405EB947 /* Pods-ExampleApp.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		F7C242B1B77796C11E85598D /* Frameworks */ = {
@@ -494,7 +474,6 @@
 /* Begin XCBuildConfiguration section */
 		0FFBB88221B549B900787FB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D365E54DCCFF9E2A15370DD4 /* Pods-ExampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -513,7 +492,6 @@
 		};
 		0FFBB88321B549B900787FB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C65EDE0EB863D96405EB947 /* Pods-ExampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,7 +632,6 @@
 		};
 		0FFEDC9921AECC9500852572 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E2F6326B7EF1FB14F40575B /* Pods-RxSwiftAutoRetry.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -682,7 +659,6 @@
 		};
 		0FFEDC9A21AECC9500852572 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75A4264EED976E7A83561A9E /* Pods-RxSwiftAutoRetry.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -709,7 +685,6 @@
 		};
 		0FFEDC9C21AECC9500852572 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 140266015EBE4581D117E495 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -729,7 +704,6 @@
 		};
 		0FFEDC9D21AECC9500852572 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78677F7555AD7CE7BDD48E65 /* Pods-RxSwiftAutoRetryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
