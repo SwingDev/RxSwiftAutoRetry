@@ -1,6 +1,0 @@
-framework module Pods_RxSwiftAutoRetryTests {
-  umbrella header "Pods-RxSwiftAutoRetryTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
