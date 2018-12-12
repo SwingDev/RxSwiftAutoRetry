@@ -19,8 +19,6 @@
 		0FFEDC8E21AECC9500852572 /* RxSwiftAutoRetry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */; };
 		0FFEDC9321AECC9500852572 /* RxSwiftAutoRetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */; };
 		0FFEDC9521AECC9500852572 /* RxSwiftAutoRetry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		654D22CA667E2F5D35C8420E /* Pods_RxSwiftAutoRetryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77856630B0DA651BC141C0C6 /* Pods_RxSwiftAutoRetryTests.framework */; };
-		8AB03E25F72794E3172173F1 /* Pods_ExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3188BA5CA0906E04FA4C15A9 /* Pods_ExampleApp.framework */; };
 		CDE2E1CF23EBEEC88BA93534 /* Pods_RxSwiftAutoRetry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00ECC42E664F7EBA4F1E3E7A /* Pods-ExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		036BC01C4A49CF233FB55199 /* Pods-RxSwiftAutoRetry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetry/Pods-RxSwiftAutoRetry.debug.xcconfig"; sourceTree = "<group>"; };
 		0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetry.swift; sourceTree = "<group>"; };
 		0FA3AFCF21AECE40009DAFAA /* MockError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		0FA3AFD021AECE40009DAFAA /* DispatchQueue+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+String.swift"; sourceTree = "<group>"; };
@@ -55,13 +51,7 @@
 		0FFEDC8D21AECC9500852572 /* RxSwiftAutoRetryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftAutoRetryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetryTests.swift; sourceTree = "<group>"; };
 		0FFEDC9421AECC9500852572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1854D80246A126401F527150 /* Pods-RxSwiftAutoRetry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetry.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetry/Pods-RxSwiftAutoRetry.release.xcconfig"; sourceTree = "<group>"; };
-		3188BA5CA0906E04FA4C15A9 /* Pods_ExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftAutoRetry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77856630B0DA651BC141C0C6 /* Pods_RxSwiftAutoRetryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftAutoRetryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6F5493F4D726A3FA1A3390D /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		E653FE1C3A88F8D02AEED21D /* Pods-RxSwiftAutoRetryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetryTests/Pods-RxSwiftAutoRetryTests.release.xcconfig"; sourceTree = "<group>"; };
-		F41AC5EC9BB608110923D3C6 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftAutoRetryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftAutoRetryTests/Pods-RxSwiftAutoRetryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AB03E25F72794E3172173F1 /* Pods_ExampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFEDC8E21AECC9500852572 /* RxSwiftAutoRetry.framework in Frameworks */,
-				654D22CA667E2F5D35C8420E /* Pods_RxSwiftAutoRetryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +121,6 @@
 				0FFEDC9121AECC9500852572 /* Tests */,
 				0FFEDC8521AECC9500852572 /* Products */,
 				F7C242B1B77796C11E85598D /* Frameworks */,
-				D9D576BEF95AAFEFAA6F01C7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,25 +154,10 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		D9D576BEF95AAFEFAA6F01C7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				00ECC42E664F7EBA4F1E3E7A /* Pods-ExampleApp.debug.xcconfig */,
-				C6F5493F4D726A3FA1A3390D /* Pods-ExampleApp.release.xcconfig */,
-				036BC01C4A49CF233FB55199 /* Pods-RxSwiftAutoRetry.debug.xcconfig */,
-				1854D80246A126401F527150 /* Pods-RxSwiftAutoRetry.release.xcconfig */,
-				F41AC5EC9BB608110923D3C6 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */,
-				E653FE1C3A88F8D02AEED21D /* Pods-RxSwiftAutoRetryTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F7C242B1B77796C11E85598D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */,
-				77856630B0DA651BC141C0C6 /* Pods_RxSwiftAutoRetryTests.framework */,
-				3188BA5CA0906E04FA4C15A9 /* Pods_ExampleApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -494,7 +466,6 @@
 /* Begin XCBuildConfiguration section */
 		0FFBB88221B549B900787FB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00ECC42E664F7EBA4F1E3E7A /* Pods-ExampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -513,7 +484,6 @@
 		};
 		0FFBB88321B549B900787FB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6F5493F4D726A3FA1A3390D /* Pods-ExampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,7 +624,6 @@
 		};
 		0FFEDC9921AECC9500852572 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 036BC01C4A49CF233FB55199 /* Pods-RxSwiftAutoRetry.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -682,7 +651,6 @@
 		};
 		0FFEDC9A21AECC9500852572 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1854D80246A126401F527150 /* Pods-RxSwiftAutoRetry.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -709,7 +677,6 @@
 		};
 		0FFEDC9C21AECC9500852572 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F41AC5EC9BB608110923D3C6 /* Pods-RxSwiftAutoRetryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -729,7 +696,6 @@
 		};
 		0FFEDC9D21AECC9500852572 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E653FE1C3A88F8D02AEED21D /* Pods-RxSwiftAutoRetryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
