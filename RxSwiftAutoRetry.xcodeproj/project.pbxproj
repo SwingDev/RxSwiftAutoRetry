@@ -19,7 +19,6 @@
 		0FFEDC8E21AECC9500852572 /* RxSwiftAutoRetry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFEDC8421AECC9500852572 /* RxSwiftAutoRetry.framework */; };
 		0FFEDC9321AECC9500852572 /* RxSwiftAutoRetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */; };
 		0FFEDC9521AECC9500852572 /* RxSwiftAutoRetry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDE2E1CF23EBEEC88BA93534 /* Pods_RxSwiftAutoRetry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		0FFEDC8D21AECC9500852572 /* RxSwiftAutoRetryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftAutoRetryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetryTests.swift; sourceTree = "<group>"; };
 		0FFEDC9421AECC9500852572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftAutoRetry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE2E1CF23EBEEC88BA93534 /* Pods_RxSwiftAutoRetry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +117,6 @@
 				0FFEDC8621AECC9500852572 /* Source */,
 				0FFEDC9121AECC9500852572 /* Tests */,
 				0FFEDC8521AECC9500852572 /* Products */,
-				F7C242B1B77796C11E85598D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,14 +150,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		F7C242B1B77796C11E85598D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5B049BD3BDD089EDAF06EB8A /* Pods_RxSwiftAutoRetry.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -180,7 +168,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FFBB88121B549B900787FB5 /* Build configuration list for PBXNativeTarget "ExampleApp" */;
 			buildPhases = (
-				7D280F57BFAD4733E953B3A7 /* [CP] Check Pods Manifest.lock */,
 				0FFBB86E21B549B700787FB5 /* Sources */,
 				0FFBB86F21B549B700787FB5 /* Frameworks */,
 				0FFBB87021B549B700787FB5 /* Resources */,
@@ -199,7 +186,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FFEDC9821AECC9500852572 /* Build configuration list for PBXNativeTarget "RxSwiftAutoRetry" */;
 			buildPhases = (
-				D81571BAD8A5BFA1F1F4D1DF /* [CP] Check Pods Manifest.lock */,
 				0FFEDC7F21AECC9500852572 /* Headers */,
 				0FFEDC8021AECC9500852572 /* Sources */,
 				0FFEDC8121AECC9500852572 /* Frameworks */,
@@ -218,7 +204,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FFEDC9B21AECC9500852572 /* Build configuration list for PBXNativeTarget "RxSwiftAutoRetryTests" */;
 			buildPhases = (
-				4FD0AA8AFEA2C2AE7F33CFDA /* [CP] Check Pods Manifest.lock */,
 				0FFEDC8921AECC9500852572 /* Sources */,
 				0FFEDC8A21AECC9500852572 /* Frameworks */,
 				0FFEDC8B21AECC9500852572 /* Resources */,
@@ -329,50 +314,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4FD0AA8AFEA2C2AE7F33CFDA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxSwiftAutoRetryTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D280F57BFAD4733E953B3A7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ExampleApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7E4A4A76B7C90CBBF9241E82 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,28 +338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftAutoRetryTests/Pods-RxSwiftAutoRetryTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D81571BAD8A5BFA1F1F4D1DF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxSwiftAutoRetry-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
