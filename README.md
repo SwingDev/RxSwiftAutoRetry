@@ -15,7 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 * iOS 8.0+
 ## Installation
-#### From CocoaPods
+### From CocoaPods
 [CocoaPods](https://cocoapods.org)  is a dependency manager, which simplifies to add 3rd-party libraries. To install it, add the following line to your Podfile:
 
 ```ruby
@@ -25,12 +25,6 @@ Then, you need to run below comand to install framework into your project:
 ```ruby
 pod install
 ```
-
-#### From Carthage
-[Carthage](https://github.com/Carthage/Carthage) is decentralized dependency manager which allows to build dependencies...
-
-#### From Swift Package Manager
-[Swift Package Manager](https://swift.org/package-manager/) is is a tool for managing the distribution of Swift code...
 ## Usage
 See sample project in Example/ folder.
 
