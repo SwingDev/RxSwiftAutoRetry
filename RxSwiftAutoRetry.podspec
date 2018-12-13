@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'RxSwiftAutoRetry'
   s.version          = '0.9.0'
-  s.summary          = 'RxSwiftAutoyRetry allows user to retry stream after exponentiall time'
+  s.summary          = 'RxSwiftAutoRetry allows user to retry stream after exponential time'
 
   s.homepage         = 'https://github.com/SwingDev/RxSwiftAutoRetry'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
