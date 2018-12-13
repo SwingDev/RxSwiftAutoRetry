@@ -10,13 +10,13 @@ It allows user to retry observable after exponential time. It also provides simp
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `pod install` from the main directory first.
 
 ## Requirements
 * iOS 8.0+
 ## Installation
 ### From CocoaPods
-[CocoaPods](https://cocoapods.org)  is a dependency manager, which simplifies to add 3rd-party libraries. To install it, add the following line to your Podfile:
+[CocoaPods](https://cocoapods.org)  is a dependency manager, which simplifies adding 3rd-party libraries. To install it, add the following line to your Podfile:
 
 ```ruby
 pod 'RxSwiftAutoRetry'
@@ -26,20 +26,19 @@ Then, you need to run below comand to install framework into your project:
 pod install
 ```
 ## Usage
-See sample project in Example/ folder.
+See sample project in [Example](ExampleApp/) folder.
 
 `retryExponentially` is extension method for RxSwift framework (in case to use this method please import **RxSwift** library.)
 
 Usually using this method looks like it:
 ```Swift
+observable.retryExponentially()
+```
+This method provides set of default values for parameters so its behavior can be customized:
+```Swift
 observable.retryExponentially(2, with: 0.9...1.1, scheduler: scheduler) { error in
 //Add code
 }
-```
-
-This method provides set of defaults values for parameters so there is no objection in writing:
-```Swift
-observable.retryExponentially()
 ```
 
 ##### Parameters
