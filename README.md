@@ -32,14 +32,13 @@ See sample project in [Example](ExampleApp/) folder.
 
 Usually using this method looks like it:
 ```Swift
+observable.retryExponentially()
+```
+This method provides set of default values for parameters so its behavior can be customized:
+```Swift
 observable.retryExponentially(2, with: 0.9...1.1, scheduler: scheduler) { error in
 //Add code
 }
-```
-
-This method provides set of default values for parameters so there is no objection in writing:
-```Swift
-observable.retryExponentially()
 ```
 
 ##### Parameters
