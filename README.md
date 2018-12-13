@@ -10,7 +10,7 @@ It allows user to retry observable after exponential time. It also provides simp
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the main directory first.
+To run the example project, clone the repo, and run `pod install` from the root project directory first.
 
 ## Requirements
 * iOS 8.0+
