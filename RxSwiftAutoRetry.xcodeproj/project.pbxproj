@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F94A73721C7C9B000B87B17 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F94A73621C7C9B000B87B17 /* RxAtomic.framework */; };
+		0F94A73921C7C9B600B87B17 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F94A73821C7C9B600B87B17 /* RxSwift.framework */; };
 		0FA3AFCD21AECE2A009DAFAA /* RxSwiftAutoRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */; };
 		0FA3AFD221AECE40009DAFAA /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFCF21AECE40009DAFAA /* MockError.swift */; };
 		0FA3AFD321AECE40009DAFAA /* DispatchQueue+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3AFD021AECE40009DAFAA /* DispatchQueue+String.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F94A73621C7C9B000B87B17 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
+		0F94A73821C7C9B600B87B17 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetry.swift; sourceTree = "<group>"; };
 		0FA3AFCF21AECE40009DAFAA /* MockError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		0FA3AFD021AECE40009DAFAA /* DispatchQueue+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+String.swift"; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F94A73721C7C9B000B87B17 /* RxAtomic.framework in Frameworks */,
+				0F94A73921C7C9B600B87B17 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F94A73521C7C9B000B87B17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F94A73821C7C9B600B87B17 /* RxSwift.framework */,
+				0F94A73621C7C9B000B87B17 /* RxAtomic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0FA3AFCE21AECE40009DAFAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +132,7 @@
 				0FFEDC8621AECC9500852572 /* Source */,
 				0FFEDC9121AECC9500852572 /* Tests */,
 				0FFEDC8521AECC9500852572 /* Products */,
+				0F94A73521C7C9B000B87B17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -552,6 +568,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -579,6 +599,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
