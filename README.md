@@ -2,6 +2,7 @@
 
 ![CI Status](https://app.bitrise.io/app/ed98584975d8f98a/status.svg?token=a_tPFWvR2HKJmI3Gv-Ew0Q)
 [![Version](https://img.shields.io/cocoapods/v/RxSwiftAutoRetry.svg?style=flat)](https://cocoapods.org/pods/RxSwiftAutoRetry)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/RxSwiftAutoRetry.svg?style=flat)](https://cocoapods.org/pods/RxSwiftAutoRetry)
 [![Platform](https://img.shields.io/cocoapods/p/RxSwiftAutoRetry.svg?style=flat)](https://cocoapods.org/pods/RxSwiftAutoRetry)
 
@@ -24,6 +25,24 @@ pod 'RxSwiftAutoRetry'
 Then, you need to run below comand to install framework into your project:
 ```ruby
 pod install
+```
+#### From Carthage
+[Carthage](https://github.com/Carthage/Carthage) is decentralized dependency manager which allows to build dependencies. 
+1. To install it, add following line to your Cartfile:
+```ruby
+github 'SwingDev/RxSwiftAutoRetry'
+```
+2. Next, run `carthage update`
+3. On your application targets’ **Build Phases** tab, in the **Link Binary With Libraries** section, drag and drop `RxAtomic.framework`, `RxSwift.framework` and `RxSwiftAutoRetry.framework` from the Carthage/Build folder on disk.
+4. On your application targets’ Build Phases settings tab, click the + icon and choose New Run Script Phase. Create a Run Script in which you specify your shell (ex: /bin/sh), add the following contents to the script area below the shell:
+```
+/usr/local/bin/carthage copy-frameworks
+```
+5. Add the paths to the frameworks you want to use under “Input Files". For example:
+```
+$(SRCROOT)/Carthage/Build/<platform>/RxAtomic.framework
+$(SRCROOT)/Carthage/Build/<platform>/RxSwift.framework
+$(SRCROOT)/Carthage/Build/<platform>/RxSwiftAutoRetry.framework
 ```
 ## Usage
 See sample project in [Example](ExampleApp/) folder.
