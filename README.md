@@ -16,7 +16,7 @@ To run the example project, clone the repo, and run `pod install` from the root 
 ## Requirements
 * iOS 8.0+
 ## Installation
-### From CocoaPods
+### CocoaPods
 [CocoaPods](https://cocoapods.org)  is a dependency manager, which simplifies adding 3rd-party libraries. To install it, add the following line to your Podfile:
 
 ```ruby
@@ -26,15 +26,15 @@ Then, you need to run below comand to install framework into your project:
 ```ruby
 pod install
 ```
-#### From Carthage
-[Carthage](https://github.com/Carthage/Carthage) is decentralized dependency manager which allows to build dependencies. 
+### Carthage
+[Carthage](https://github.com/Carthage/Carthage) is decentralized dependency manager which allows you to keep your dependencies in compiled format. 
 1. To install it, add following line to your Cartfile:
 ```ruby
 github 'SwingDev/RxSwiftAutoRetry'
 ```
 2. Next, run `carthage update`
 3. On your application targets’ **Build Phases** tab, in the **Link Binary With Libraries** section, drag and drop `RxAtomic.framework`, `RxSwift.framework` and `RxSwiftAutoRetry.framework` from the Carthage/Build folder on disk.
-4. On your application targets’ Build Phases settings tab, click the + icon and choose New Run Script Phase. Create a Run Script in which you specify your shell (ex: /bin/sh), add the following contents to the script area below the shell:
+4. On your application targets’ **Build Phases** settings tab, click the + icon and choose **New Run Script Phase**. Create a Run Script in which you specify your shell (ex: /bin/sh), add the following contents to the script area below the shell:
 ```
 /usr/local/bin/carthage copy-frameworks
 ```
