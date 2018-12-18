@@ -56,6 +56,10 @@ dependencies: [
 .package(url: "https://github.com/SwingDev/RxSwiftAutoRetry.git", from: "0.9"))
 ]
 ```
+Then, run below command:
+```ruby
+pod install
+```
 ## Usage
 See sample project in [Example](ExampleApp/) folder.
 
