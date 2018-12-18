@@ -15,6 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the root 
 
 ## Requirements
 * iOS 8.0+
+* macOS 10.9+
 ## Installation
 ### CocoaPods
 [CocoaPods](https://cocoapods.org)  is a dependency manager, which simplifies adding 3rd-party libraries. To install it, add the following line to your Podfile:
@@ -43,6 +44,17 @@ github 'SwingDev/RxSwiftAutoRetry'
 $(SRCROOT)/Carthage/Build/<platform>/RxAtomic.framework
 $(SRCROOT)/Carthage/Build/<platform>/RxSwift.framework
 $(SRCROOT)/Carthage/Build/<platform>/RxSwiftAutoRetry.framework
+```
+### Swift Package Manager
+[Swift Package Manager](https://swift.org/package-manager/) is is a tool for managing the distribution of Swift code and integrating it into compiler.
+
+**It is working only with macOS.**
+
+Add dependency to you `Package.swift` file:
+``` swift
+dependencies: [
+.package(url: "https://github.com/SwingDev/RxSwiftAutoRetry.git", from: "0.9"))
+]
 ```
 ## Usage
 See sample project in [Example](ExampleApp/) folder.
