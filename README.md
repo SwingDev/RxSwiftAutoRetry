@@ -50,7 +50,7 @@ $(SRCROOT)/Carthage/Build/<platform>/RxSwiftAutoRetry.framework
 
 **It only works with macOS.**
 
-Add dependency to you `Package.swift` file:
+Add dependency to your `Package.swift` file:
 ``` swift
 dependencies: [
 .package(url: "https://github.com/SwingDev/RxSwiftAutoRetry.git", from: "0.9"))
