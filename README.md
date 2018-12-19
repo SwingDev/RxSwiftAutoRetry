@@ -48,7 +48,7 @@ $(SRCROOT)/Carthage/Build/<platform>/RxSwiftAutoRetry.framework
 ### Swift Package Manager
 [Swift Package Manager](https://swift.org/package-manager/) is is a tool for managing the distribution of Swift code and integrating it into compiler.
 
-**It is working only with macOS.**
+**It only works with macOS.**
 
 Add dependency to you `Package.swift` file:
 ``` swift
