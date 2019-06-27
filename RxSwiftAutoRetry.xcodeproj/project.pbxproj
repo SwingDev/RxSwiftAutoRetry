@@ -36,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F94A73621C7C9B000B87B17 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		0F94A73821C7C9B600B87B17 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		0FA3AFCC21AECE2A009DAFAA /* RxSwiftAutoRetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftAutoRetry.swift; sourceTree = "<group>"; };
 		0FA3AFCF21AECE40009DAFAA /* MockError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
@@ -97,7 +96,6 @@
 			children = (
 				EA74AA0722C537E100CEB756 /* Nimble.framework */,
 				0F94A73821C7C9B600B87B17 /* RxSwift.framework */,
-				0F94A73621C7C9B000B87B17 /* RxAtomic.framework */,
 				295B3A1EA450206579D1ED81 /* Pods_ExampleApp.framework */,
 			);
 			name = Frameworks;
@@ -244,7 +242,7 @@
 				0FFEDC8921AECC9500852572 /* Sources */,
 				0FFEDC8A21AECC9500852572 /* Frameworks */,
 				0FFEDC8B21AECC9500852572 /* Resources */,
-				EA74AA0922C538B800CEB756 /* Carthage copy */,
+				EA74AA0922C538B800CEB756 /* Carthage frameworks copy */,
 			);
 			buildRules = (
 			);
@@ -365,7 +363,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EA74AA0922C538B800CEB756 /* Carthage copy */ = {
+		EA74AA0922C538B800CEB756 /* Carthage frameworks copy */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,14 +374,14 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
-			name = "Carthage copy";
+			name = "Carthage frameworks copy";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
