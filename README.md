@@ -13,6 +13,10 @@ It allows user to retry observable after exponential time. It also provides simp
 
 To run the example project, clone the repo, and run `pod install` from the root project directory first.
 
+## Tests
+
+To run tests, run `carthage update` from the root project directory first.
+
 ## Requirements
 * iOS 8.0+
 * macOS 10.9+
