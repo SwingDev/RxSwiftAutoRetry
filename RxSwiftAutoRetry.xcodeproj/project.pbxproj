@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		0FFEDC9321AECC9500852572 /* RxSwiftAutoRetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEDC9221AECC9500852572 /* RxSwiftAutoRetryTests.swift */; };
 		0FFEDC9521AECC9500852572 /* RxSwiftAutoRetry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFEDC8721AECC9500852572 /* RxSwiftAutoRetry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1573EE955B0BBF2D4D986A77 /* Pods_ExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295B3A1EA450206579D1ED81 /* Pods_ExampleApp.framework */; };
+		EA74AA0622C5379300CEB756 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F94A73821C7C9B600B87B17 /* RxSwift.framework */; };
+		EA74AA0A22C5395900CEB756 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA74AA0722C537E100CEB756 /* Nimble.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		295B3A1EA450206579D1ED81 /* Pods_ExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E14267BD9FC63F0AD6024ED /* Pods-ExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.debug.xcconfig"; path = "Target Support Files/Pods-ExampleApp/Pods-ExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A68651FE22E80AA9B4DFFB73 /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		EA74AA0722C537E100CEB756 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFEDC8E21AECC9500852572 /* RxSwiftAutoRetry.framework in Frameworks */,
+				EA74AA0622C5379300CEB756 /* RxSwift.framework in Frameworks */,
+				EA74AA0A22C5395900CEB756 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 		0F94A73521C7C9B000B87B17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA74AA0722C537E100CEB756 /* Nimble.framework */,
 				0F94A73821C7C9B600B87B17 /* RxSwift.framework */,
 				0F94A73621C7C9B000B87B17 /* RxAtomic.framework */,
 				295B3A1EA450206579D1ED81 /* Pods_ExampleApp.framework */,
@@ -177,7 +183,6 @@
 				6E14267BD9FC63F0AD6024ED /* Pods-ExampleApp.debug.xcconfig */,
 				A68651FE22E80AA9B4DFFB73 /* Pods-ExampleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -239,6 +244,7 @@
 				0FFEDC8921AECC9500852572 /* Sources */,
 				0FFEDC8A21AECC9500852572 /* Frameworks */,
 				0FFEDC8B21AECC9500852572 /* Resources */,
+				EA74AA0922C538B800CEB756 /* Carthage copy */,
 			);
 			buildRules = (
 			);
@@ -269,6 +275,7 @@
 					};
 					0FFEDC8C21AECC9500852572 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -357,6 +364,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EA74AA0922C538B800CEB756 /* Carthage copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = "Carthage copy";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -628,6 +655,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VV3H7446H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -636,7 +667,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.swingdev.RxSwiftAutoRetryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -647,6 +678,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4VV3H7446H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -655,7 +690,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.swingdev.RxSwiftAutoRetryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
