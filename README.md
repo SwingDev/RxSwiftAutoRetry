@@ -13,6 +13,10 @@ It allows user to retry observable after exponential time. It also provides simp
 
 To run the example project, clone the repo, and run `pod install` from the root project directory first.
 
+## Tests
+
+To run tests, run `carthage update` from the root project directory first.
+
 ## Requirements
 * iOS 8.0+
 * macOS 10.9+
@@ -34,14 +38,13 @@ pod install
 github 'SwingDev/RxSwiftAutoRetry'
 ```
 2. Next, run `carthage update`
-3. On your application targets’ **Build Phases** tab, in the **Link Binary With Libraries** section, drag and drop `RxAtomic.framework`, `RxSwift.framework` and `RxSwiftAutoRetry.framework` from the Carthage/Build folder on disk.
+3. On your application targets’ **Build Phases** tab, in the **Link Binary With Libraries** section, drag and drop `RxSwift.framework` and `RxSwiftAutoRetry.framework` from the Carthage/Build folder on disk.
 4. On your application targets’ **Build Phases** settings tab, click the + icon and choose **New Run Script Phase**. Create a Run Script in which you specify your shell (ex: /bin/sh), add the following contents to the script area below the shell:
 ```
 /usr/local/bin/carthage copy-frameworks
 ```
 5. Add the paths to the frameworks you want to use under “Input Files". For example:
 ```
-$(SRCROOT)/Carthage/Build/<platform>/RxAtomic.framework
 $(SRCROOT)/Carthage/Build/<platform>/RxSwift.framework
 $(SRCROOT)/Carthage/Build/<platform>/RxSwiftAutoRetry.framework
 ```

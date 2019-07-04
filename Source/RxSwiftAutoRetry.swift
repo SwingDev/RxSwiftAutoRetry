@@ -12,7 +12,7 @@ extension ObservableType {
     public func retryExponentially(maxAttemptCount: Int = 3,
                                    randomizedRange jitter: ClosedRange<Double> = 0.9...1.1,
                                    scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global()),
-                                   onRetry: ((Error) -> Void)? = nil) -> Observable<E> {
+                                   onRetry: ((Error) -> Void)? = nil) -> Observable<Element> {
         guard maxAttemptCount > 0 else { return Observable.empty() }
 
         return Observable.create({
@@ -28,7 +28,7 @@ extension ObservableType {
         })
     }
 
-    private func handleObserver(observer: AnyObserver<E>,
+    private func handleObserver(observer: AnyObserver<Element>,
                                 trial: Int,
                                 maxAttemptCount: Int,
                                 disposable: SerialDisposable,
@@ -36,10 +36,12 @@ extension ObservableType {
                                 scheduler: SchedulerType,
                                 onRetry: ((Error) -> Void)?) {
 
-        let delayTime = exp(Double(trial)) * Double.random(in: jitter)
+        let delayTimeInSeconds = exp(Double(trial)) * Double.random(in: jitter)
+        let delayTimeInMiliseconds = Int(floor(delayTimeInSeconds * 1000))
 
         disposable.disposable = self
-            .delaySubscription(delayTime, scheduler: scheduler)
+            .delaySubscription(DispatchTimeInterval.milliseconds(delayTimeInMiliseconds),
+                               scheduler: scheduler)
             .subscribe({ event in
                 switch event {
                 case .next(let element): observer.onNext(element)
@@ -62,3 +64,4 @@ extension ObservableType {
 
     }
 }
+

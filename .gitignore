@@ -1,3 +1,7 @@
 RxSwiftAutoRetry.xcodeproj/project.xcworkspace/xcuserdata
 RxSwiftAutoRetry.xcodeproj/xcuserdata/
 RxSwiftAutoRetry.xcworkspace/xcuserdata
+
+Carthage/Checkouts
+Carthage/Build
+Pods
